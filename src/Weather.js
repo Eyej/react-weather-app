@@ -8,7 +8,9 @@ export default function Weather(props) {
     alert(
       `The temperature in ${response.data.name} is ${Math.round(
         response.data.main.temp_max
-      )}°C`
+      )}°C. One may describe the weather as having ${
+        response.data.weather[0].description
+      }`
     );
   }
 
