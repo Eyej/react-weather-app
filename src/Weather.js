@@ -36,7 +36,6 @@ export default function App() {
 
     axios.get(endpoint).then(displayWeather);
   }
-  let cities = ["Vancouver", "Paris", "Moscow", "Lagos"];
   let form = (
     <div className="Weather">
       <form onSubmit={getWeather}>
