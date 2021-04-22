@@ -1,6 +1,7 @@
-.Weather body {
-  background: #282c34;
-  color: #fff;
+.Weather {
+  /* background: #282c34;
+  color: #fff; */
+  text-align: center;
 }
 .Weather input {
   padding: 10px;
@@ -8,5 +9,11 @@
 }
 .Weather ul {
   list-style: none;
-  /* display: flex; */
+  display: flex;
+  padding-left: 0;
+  /* text-align: center; */
+}
+.Weather li {
+  display: block;
+  margin: auto;
 }

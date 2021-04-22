@@ -17,10 +17,12 @@ export default function App() {
   function displayWeather(response) {
     setData(true);
     setWeather({
+      name: response.data.name,
       temperature: Math.round(response.data.main.temp_max),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      countrySC: response.data.sys.country,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
     console.log(response.data);
@@ -37,7 +39,6 @@ export default function App() {
   let cities = ["Vancouver", "Paris", "Moscow", "Lagos"];
   let form = (
     <div className="Weather">
-      <h1>Weather App</h1>
       <form onSubmit={getWeather}>
         <input type="search" placeholder="Type any city" onChange={getCity} />
         <input type="submit" value="Search" />
@@ -48,21 +49,23 @@ export default function App() {
   if (data) {
     return (
       <div className="Weather">
-        <ul>
+        {/* <ul>
           {cities.map(function (el, index) {
             return <li key={index}>{el}</li>;
           })}
-        </ul>{" "}
+        </ul>{" "} */}
         {form}
+        <h3>
+          {weather.name}, {weather.countrySC}
+        </h3>
+        <p>{weather.description}</p>
+        <p>
+          <img src={weather.icon} alt="Weather icon" />
+          <span>{weather.temperature}°C</span>
+        </p>
         <ul>
-          <li>City: {city}</li>
-          <li> Temperature: {weather.temperature}°C</li>
-          <li>Description; {weather.description}</li>
           <li>Humidity: {weather.humidity}%</li>
           <li>Wind: {weather.wind}Km/ph</li>
-          <li>
-            <img src={weather.icon} alt="Weather icon" />
-          </li>
         </ul>
       </div>
     );
