@@ -4,8 +4,11 @@ import "./App.css";
 function App() {
   return (
     <div className="App App-header">
-      <h1>Hello Ijeoma, Welcome to React 👋🏾</h1>
-      <Weather city="Lagos" />
+      <h2>
+        Hello 👋🏾 will you check out my app? Enter any city to see its current
+        weather.{" "}
+      </h2>
+      <Weather />
     </div>
   );
 }

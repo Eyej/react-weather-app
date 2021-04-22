@@ -1,0 +1,12 @@
+.Weather body {
+  background: #282c34;
+  color: #fff;
+}
+.Weather input {
+  padding: 10px;
+  border-radius: 5px;
+}
+.Weather ul {
+  list-style: none;
+  /* display: flex; */
+}
