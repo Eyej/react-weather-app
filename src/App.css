@@ -1,18 +1,13 @@
-/* .App {
-  background-color: #282c34;
-  color: white;
-  min-height: 100vh;
-  border: 3px solid gold;
+.App {
+  margin: 30px auto;
+  max-width: 650px;
 }
-.App h2 {
-  text-align: center;
+.App footer {
+  font-size: 14px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: 10px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-.App a {
+.App footer a {
   color: rosybrown;
 }
