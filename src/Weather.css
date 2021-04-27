@@ -1,19 +1,19 @@
 .Weather {
-  /* background: #282c34;
-  color: #fff; */
-  text-align: center;
-}
-.Weather input {
-  padding: 10px;
-  border-radius: 5px;
+  border: 2px solid rgb(61, 60, 63);
+  /* background: #282c34; */
+  /* color: #fff;
+  text-align: center; */
 }
 .Weather ul {
   list-style: none;
-  display: flex;
   padding-left: 0;
-  /* text-align: center; */
 }
-.Weather li {
+/* .Weather input {
+  padding: 10px;
+  border-radius: 5px;
+}*/
+
+/*.Weather li {
   display: block;
   margin: auto;
-}
+} */
