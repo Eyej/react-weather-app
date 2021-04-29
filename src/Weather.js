@@ -3,27 +3,29 @@ import axios from "axios";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "./Weather.css";
+import CurrentDate from "./CurrentDate";
 
 export default function Weather() {
-  const [ready, setReady] = useState(false);
-  let [weatherData, setWeatherData] = useState({});
+  // changed 'ready' from a state variable to an object property
+  let [weatherData, setWeatherData] = useState({ ready: false });
 
   function displayWeather(response) {
-    setReady(true);
     console.log(response.data);
     setWeatherData({
+      ready: true,
       name: response.data.name,
+      date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp_max),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
-      wind: response.data.wind.speed,
+      wind: Math.round(response.data.wind.speed),
       countrySC: response.data.sys.country,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       // src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
     });
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <form>
@@ -31,7 +33,7 @@ export default function Weather() {
             <div className="col-9">
               <input
                 type="search"
-                placeholder="Type any city"
+                placeholder="Show me the weather in..."
                 autoFocus="on"
                 className="form-control"
               />
@@ -47,7 +49,9 @@ export default function Weather() {
           {weatherData.name}, {weatherData.countrySC}
         </h1>
         <ul>
-          <li>Wednesday 09:00am</li>
+          <li>
+            <CurrentDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row mt-3">
