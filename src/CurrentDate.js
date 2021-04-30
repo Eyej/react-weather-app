@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function CurrentDate(props) {
-  console.log(props.date);
   const days = [
     "Sunday",
     "Monday",

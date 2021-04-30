@@ -11,7 +11,6 @@ export default function Weather(props) {
   let [city, setCity] = useState(props.city);
 
   function displayWeather(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       name: response.data.name,
@@ -21,6 +20,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
       countrySC: response.data.sys.country,
+      feel: Math.round(response.data.main.feels_like),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       // src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
     });
@@ -67,6 +67,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
+    search();
     return (
       <div>
         <p>Loading...</p>
