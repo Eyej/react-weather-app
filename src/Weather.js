@@ -29,7 +29,6 @@ export default function Weather(props) {
   function search() {
     const apiKey = "386b70f96b3e09e40aefe57eb2e44f5e";
     let unit = "metric";
-    // let city = "Mapperley";
     let endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
     axios.get(endpoint).then(displayWeather);
   }
@@ -59,7 +58,11 @@ export default function Weather(props) {
             </div>
 
             <div className="col-3">
-              <input type="submit" value="Search" className="btn btn-success" />
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-success wt-100"
+              />
             </div>
           </div>
         </form>
