@@ -1,14 +1,9 @@
 import React from "react";
 import CurrentDate from "./CurrentDate";
-import FahrenheitTemperature from "./FahrenheitTemperature";
+import WeatherTemperature from "./WeatherTemperature";
 import "./SearchResult.css";
 
 export default function SearchResult(props) {
-  function getFahrenheitTemperature() {
-    let temperature = Math.round((props.celsiusTemp * 9) / 5 + 32);
-    return temperature;
-  }
-
   return (
     <div className="SearchResult">
       <h1>
@@ -29,25 +24,7 @@ export default function SearchResult(props) {
               className="float-left"
             />{" "}
             <div className="float-left">
-              <span className="temperature">{props.data.temperature}</span>
-              <span className="unit">
-                °
-                <a href="/" className="temp-link">
-                  C
-                </a>{" "}
-                |{" "}
-              </span>
-              <span className="unit">
-                °
-                <a
-                  href="/"
-                  className="temp-link"
-                  onClick={getFahrenheitTemperature}
-                >
-                  F
-                  {/* <FahrenheitTemperature celsiusTemp={props.data.temperature} /> */}
-                </a>
-              </span>
+              <WeatherTemperature celsius={props.data.temperature} />
             </div>
           </div>
         </div>
