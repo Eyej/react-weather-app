@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchResult from "./SearchResult";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -14,6 +15,7 @@ export default function Weather(props) {
     setWeatherData({
       ready: true,
       name: response.data.name,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp_max),
       description: response.data.weather[0].description,
@@ -22,7 +24,6 @@ export default function Weather(props) {
       countrySC: response.data.sys.country,
       feel: Math.round(response.data.main.feels_like),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      // src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
     });
   }
 
@@ -67,6 +68,7 @@ export default function Weather(props) {
           </div>
         </form>
         <SearchResult data={weatherData} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
