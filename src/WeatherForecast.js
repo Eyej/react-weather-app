@@ -7,9 +7,9 @@ export default function WeatherForecast(props) {
 
   function showWeatherForecast(response) {
     console.log(response.data);
-    setForecastData({
-      temperature: Math.round(response.data.current.temp),
-    });
+    // setForecastData({
+    //   temperature: Math.round(response.data.current.temp),
+    // });
   }
 
   const apiKey = "386b70f96b3e09e40aefe57eb2e44f5e";
