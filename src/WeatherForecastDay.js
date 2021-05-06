@@ -10,31 +10,31 @@ export default function WeatherForecastDay(props) {
     return days[day];
   }
 
-  function max() {
+  function maxTemperature() {
     let temperature = Math.round(props.data.temp.max);
     return temperature;
   }
 
-  function min() {
+  function minTemperature() {
     let temperature = Math.round(props.data.temp.min);
     return temperature;
   }
 
   function pix() {
     let img = props.data.weather[0].icon;
-    return `http://openweathermap.org/img/wn/${img}@2x.png`;
+    return `http://openweathermap.org/img/wn/${img}.png`;
   }
   return (
-    <div className="WeatherForecastDay">
-      <div className="row">
-        <div className="col">
-          <div className="WeatherForecast-day">{day()}</div>
-          <img src={pix()} alt={props.data.weather[0].description} />
-          <div className="WeatherForecast-temperature">
-            <span className="WeatherForecast-maxTemperature">{max()}°</span>
-            <span className="WeatherForecast-minTemperature">{min()}°</span>
-          </div>
-        </div>
+    <div>
+      <div className="WeatherForecast-day">{day()}</div>
+      <img src={pix()} alt={props.data.weather[0].description} />
+      <div className="WeatherForecast-temperature">
+        <span className="WeatherForecast-maxTemperature">
+          {maxTemperature()}°
+        </span>
+        <span className="WeatherForecast-minTemperature">
+          {minTemperature()}°
+        </span>
       </div>
     </div>
   );
