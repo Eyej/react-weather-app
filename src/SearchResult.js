@@ -32,7 +32,7 @@ export default function SearchResult(props) {
           <ul>
             <li>Feels like: {props.data.feel}°C</li>
             <li>Humidity: {props.data.humidity}%</li>
-            <li>Wind: {props.data.wind}Km/ph</li>
+            <li>Wind: {props.data.wind}km/ph</li>
           </ul>
         </div>
       </div>
