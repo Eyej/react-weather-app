@@ -8,15 +8,14 @@ export default function WeatherForecast(props) {
   let [forecastData, setForecastData] = useState(null);
 
   function showWeatherForecast(response) {
-    console.log(response.data);
-    setLoaded(true);
     setForecastData(response.data.daily);
+    setLoaded(true);
   }
 
   if (loaded) {
     return (
       <div className="WeatherForecast">
-        <WeatherForecastDay data={forecastData} />
+        <WeatherForecastDay data={forecastData[0]} />
       </div>
     );
   } else {
