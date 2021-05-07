@@ -30,9 +30,9 @@ export default function SearchResult(props) {
         </div>
         <div className="col-6">
           <ul>
-            <li>Feels like: {props.data.feel}°C</li>
+            <li>Feels like: {props.data.feel} °C</li>
             <li>Humidity: {props.data.humidity}%</li>
-            <li>Wind: {props.data.wind}km/ph</li>
+            <li>Wind: {props.data.wind} km/ph</li>
           </ul>
         </div>
       </div>

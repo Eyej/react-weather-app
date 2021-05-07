@@ -1,8 +1,7 @@
 import React from "react";
 
+// made search/forecast results separate components for ease of use
 export default function WeatherForecastDay(props) {
-  //   console.log(props.data);
-
   function day() {
     let date = new Date(props.data.dt * 1000);
     let day = date.getDay();

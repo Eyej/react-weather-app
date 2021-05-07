@@ -10,7 +10,8 @@ function App() {
           <a href="https://github.com/Eyej/react-weather-app">
             Open-source code{" "}
           </a>{" "}
-          by Ijeoma Onyenokporo
+          by Ijeoma Onyenokporo, happily hosted on{" "}
+          <a href="https://upbeat-mahavira-232e97.netlify.app/">Netlify.</a>
         </footer>
       </div>
     </div>
